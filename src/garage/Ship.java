@@ -8,9 +8,7 @@ public class Ship extends Vehicle {
 	}
 
 	public Ship(String model, int doors, String colour, boolean floating) {
-		setModel(model);
-		setDoors(doors);
-		setColour(colour);
+		super(model, doors, colour);
 		this.floating = floating;
 	}
 
@@ -20,5 +18,17 @@ public class Ship extends Vehicle {
 
 	public void setFloating(boolean floating) {
 		this.floating = floating;
+	}
+
+	public Ship(String model, int doors, String colour) {
+		super(model, doors, colour);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void list() {
+		super.list();
+		System.out.println("Floating:" + (isFloating() ? "Yes" : "No"));
+		System.out.println("___Ship info: completed___");
 	}
 }

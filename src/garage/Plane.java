@@ -8,9 +8,7 @@ public class Plane extends Vehicle {
 	}
 
 	public Plane(String model, int doors, String colour, boolean flying) {
-		setModel(model);
-		setDoors(doors);
-		setColour(colour);
+		super(model, doors, colour);
 		this.flying = flying;
 	}
 
@@ -20,5 +18,17 @@ public class Plane extends Vehicle {
 
 	public void setFlying(boolean flying) {
 		this.flying = flying;
+	}
+
+	public Plane(String model, int doors, String colour) {
+		super(model, doors, colour);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void list() {
+		super.list();
+		System.out.println("Flying:" + (isFlying() ? "Yes" : "No"));
+		System.out.println("___Plane info: completed___");
 	}
 }
