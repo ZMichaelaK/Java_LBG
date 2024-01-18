@@ -11,10 +11,25 @@ public class Garage {
 		vehicles.add(vehicle);
 	}
 
-	public void print() {
-		for (Vehicle vehicle : vehicles) {
-			vehicle.list();
-		}
+	public void removeVehicle(Vehicle vehicle) {
+		vehicles.remove(vehicle);
 	}
 
+	public void print() {
+		for (Vehicle vehicle : vehicles)
+			vehicle.list();
+	}
+
+	public void fix() {
+		double calcBill = 0.0;
+		for (Vehicle vehicle : vehicles) {
+			calcBill += vehicle.calcBill();
+		}
+		System.out.println(calcBill);
+	}
+
+	@Override
+	public String toString() {
+		return "Garage [vehicles=" + vehicles + "]";
+	}
 }

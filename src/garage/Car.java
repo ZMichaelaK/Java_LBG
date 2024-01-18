@@ -2,6 +2,12 @@ package garage;
 
 public class Car extends Vehicle {
 
+	@Override
+	public String toString() {
+		return "Car [driving=" + driving + ", getModel()=" + getModel() + ", getDoors()=" + getDoors()
+				+ ", getColour()=" + getColour() + "]";
+	}
+
 	private boolean driving;
 
 	public Car() {
@@ -22,13 +28,30 @@ public class Car extends Vehicle {
 
 	public Car(String model, int doors, String colour) {
 		super(model, doors, colour);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void list() {
 		super.list();
-		System.out.println("Driving:" + (isDriving() ? "Yes" : "No"));
-		System.out.println("___Car info: completed___");
+//		System.out.println("Driving: " + (isDriving() ? "Yes" : "No"));
+//		System.out.println("___Car info: completed___");
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		Car other = (Car) obj;
+
+		if (!super.equals(obj)) {
+			return false;
+		}
+
+		return this.driving == other.isDriving();
+	}
+
 }
