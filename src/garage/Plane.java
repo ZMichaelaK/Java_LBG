@@ -2,7 +2,9 @@ package garage;
 
 import java.util.Objects;
 
-public class Plane extends Vehicle {
+import list.Flyable;
+
+public class Plane extends Vehicle implements Flyable {
 
 	@Override
 	public int hashCode() {
@@ -26,7 +28,12 @@ public class Plane extends Vehicle {
 
 	private boolean flying;
 
+	public void fly() {
+		System.out.println("zoomies");
+	}
+
 	public Plane() {
+		super();
 	}
 
 	public Plane(String model, int doors, String colour, boolean flying) {
@@ -56,7 +63,8 @@ public class Plane extends Vehicle {
 
 	@Override
 	public String toString() {
-		return "Plane [flying=" + flying + ", getModel()=" + getModel() + ", getDoors()=" + getDoors()
-				+ ", getColour()=" + getColour() + "]";
+		return "Plane [flying=" + flying + ", getModel()=" + getModel() + ", getId()=" + getId() + ", getDoors()="
+				+ getDoors() + ", getColour()=" + getColour() + "]";
 	}
+
 }

@@ -2,13 +2,18 @@ package garage;
 
 import java.util.Objects;
 
-public class Vehicle {
+public abstract class Vehicle implements Comparable<Vehicle> {
+
+	private static int count = 1;
+	private int id;
 
 	private String model;
 	private int doors;
 	private String colour;
 
 	public Vehicle() {
+		super();
+		this.id = count++;
 	}
 
 	public double calcBill() {
@@ -19,6 +24,8 @@ public class Vehicle {
 	}
 
 	public Vehicle(String model, int doors, String colour) {
+		super();
+		this.id = count++;
 		this.model = model;
 		this.doors = doors;
 		this.colour = colour;
@@ -28,6 +35,12 @@ public class Vehicle {
 //		System.out.println("Model name: " + this.model);
 //		System.out.println("# of doors: " + this.doors);
 //		System.out.println("Colour: " + this.colour);
+	}
+
+	@Override
+	public int compareTo(Vehicle o) {
+		// TODO Auto-generated method stub
+		return id - o.id;
 	}
 
 	public String getModel() {
@@ -53,7 +66,16 @@ public class Vehicle {
 
 	@Override
 	public String toString() {
-		return "Vehicle [model=" + model + ", doors=" + doors + ", colour=" + colour + "]";
+		return "Vehicle [id=" + getId() + ", model=" + model + ", doors=" + doors + ", colour=" + colour
+				+ ", toString()=" + super.toString() + "]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setModel(String model) {

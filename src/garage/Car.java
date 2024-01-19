@@ -4,13 +4,14 @@ public class Car extends Vehicle {
 
 	@Override
 	public String toString() {
-		return "Car [driving=" + driving + ", getModel()=" + getModel() + ", getDoors()=" + getDoors()
-				+ ", getColour()=" + getColour() + "]";
+		return "Car [driving=" + driving + ", getModel()=" + getModel() + ", getId()=" + getId() + ", getDoors()="
+				+ getDoors() + ", getColour()=" + getColour() + "]";
 	}
 
 	private boolean driving;
 
 	public Car() {
+		super();
 	}
 
 	public Car(String model, int doors, String colour, boolean driving) {

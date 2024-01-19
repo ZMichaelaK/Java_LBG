@@ -14,6 +14,14 @@ public class Garage {
 	public void removeVehicle(Vehicle vehicle) {
 		vehicles.remove(vehicle);
 	}
+	public void removeVehicle(int id) {
+		for (Vehicle vehicle : this.vehicles) {
+			if (id == vehicle.getId()) {
+				this.vehicles.remove(vehicle);
+				return;
+			}
+		}
+	}
 
 	public void print() {
 		for (Vehicle vehicle : vehicles)

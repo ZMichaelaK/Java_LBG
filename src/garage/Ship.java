@@ -27,6 +27,7 @@ public class Ship extends Vehicle {
 	private boolean floating;
 
 	public Ship() {
+		super();
 	}
 
 	public Ship(String model, int doors, String colour, boolean floating) {
@@ -56,7 +57,8 @@ public class Ship extends Vehicle {
 
 	@Override
 	public String toString() {
-		return "Ship [floating=" + floating + ", getModel()=" + getModel() + ", getDoors()=" + getDoors()
-				+ ", getColour()=" + getColour() + "]";
+		return "Ship [floating=" + floating + ", getModel()=" + getModel() + ", getId()=" + getId() + ", getDoors()="
+				+ getDoors() + ", getColour()=" + getColour() + "]";
 	}
+
 }
